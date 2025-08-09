@@ -10,7 +10,7 @@
 
 ### Team Members
 - Team Lead:  T Vineesh - Sahrdaya College Of Engineering And Technology Kodakara,Thrissur,Kerala 
--Member 2: Menon Sreeraj Raghunath - Sahrdaya College Of Engineering And Technology Kodakara,Thrissur,Kerala
+ -Member 2: Menon Sreeraj Raghunath - Sahrdaya College Of Engineering And Technology Kodakara,Thrissur,Kerala
 
 ### Project Description
 An Android app that sends alert messages and makes your phone vibrate for extreme weather conditions… on other planets like Mars, Jupiter, and beyond. Because who doesn’t want to know about a Martian dust storm while eating breakfast?
