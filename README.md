@@ -22,7 +22,8 @@ We built a mobile app that notifies you with alerts and phone vibrations wheneve
 
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+We built a mobile app that notifies you with alerts and phone vibrations whenever weather events like cyclones, rain, or storms occur on other planets. Finally, you can panic about extraterrestrial drizzle without leaving your couch.
+
 
 ## Technical Details
 We built a mobile app that notifies you with alerts and phone vibrations whenever weather events like cyclones, rain, or storms occur on other planets. Finally, you can panic about extraterrestrial drizzle without leaving your couch.
