@@ -1,0 +1,439 @@
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\java\com\hackathon\alienweather\NotificationHelper.kt:63: Error: Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with checkPermission) or explicitly handle a potential SecurityException [MissingPermission]
+        NotificationManagerCompat.from(context).notify(++notificationId, notification)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "MissingPermission":
+   This check scans through your code and libraries and looks at the APIs
+   being used, and checks this against the set of permissions required to
+   access those APIs. If the code using those APIs is called at runtime, then
+   the program will crash.
+
+   Furthermore, for permissions that are revocable (with targetSdkVersion 23),
+   client code must also be prepared to handle the calls throwing an exception
+   if the user rejects the request for permission at runtime.
+
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\java\com\hackathon\alienweather\MainActivity.kt:47: Error: Call requires API level 26 (current min is 24): android.content.ContextWrapper#startForegroundService [NewApi]
+        startForegroundService(intent)
+        ~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "NewApi":
+   This check scans through all the Android API calls in the application and
+   warns about any calls that are not available on all versions targeted by
+   this application (according to its minimum SDK attribute in the manifest).
+
+   If you really want to use this API and don't need to support older devices
+   just set the minSdkVersion in your build.gradle or AndroidManifest.xml
+   files.
+
+   If your code is deliberately accessing newer APIs, and you have ensured
+   (e.g. with conditional execution) that this code will only ever be called
+   on a supported platform, then you can annotate your class or method with
+   the @TargetApi annotation specifying the local minimum SDK to apply, such
+   as @TargetApi(11), such that this check considers 11 rather than your
+   manifest file's minimum SDK as the required API level.
+
+   If you are deliberately setting android: attributes in style definitions,
+   make sure you place this in a values-vNN folder in order to avoid running
+   into runtime conflicts on certain devices where manufacturers have added
+   custom attributes whose ids conflict with the new ones on later platforms.
+
+   Similarly, you can use tools:targetApi="11" in an XML file to indicate that
+   the element will only be inflated in an adequate context.
+
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:13: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
+        targetSdk = 34
+        ~~~~~~~~~~~~~~
+
+   Explanation for issues of type "OldTargetApi":
+   When your application or sdk runs on a version of Android that is more
+   recent than your targetSdkVersion specifies that it has been tested with,
+   various compatibility modes kick in. This ensures that your application
+   continues to work, but it may look out of place. For example, if the
+   targetSdkVersion is less than 14, your app may get an option button in the
+   UI.
+
+   To fix this issue, set the targetSdkVersion to the highest available value.
+   Then test your app to make sure everything works correctly. You may want to
+   consult the compatibility notes to see what changes apply to each version
+   you are adding support for:
+   https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+   as well as follow this guide:
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.
+   html
+
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.html
+
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\AndroidManifest.xml:26: Error: foregroundServiceType:dataSync requires permission:[android.permission.FOREGROUND_SERVICE_DATA_SYNC] [ForegroundServicePermission]
+        <service
+        ^
+
+   Explanation for issues of type "ForegroundServicePermission":
+   For targetSdkVersion >= 34, each foregroundServiceType listed in the
+   <service> element requires specific sets of permissions to be declared in
+   the manifest. If permissions are missing, then when the foreground service
+   is started with a foregroundServiceType that has missing permissions, a
+   SecurityException will be thrown.
+
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\java\com\hackathon\alienweather\MainActivity.kt:12: Warning: Use SwitchCompat from AppCompat or SwitchMaterial from Material library [UseSwitchCompatOrMaterialCode from androidx.appcompat]
+    private lateinit var rainSwitch: Switch
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\java\com\hackathon\alienweather\MainActivity.kt:13: Warning: Use SwitchCompat from AppCompat or SwitchMaterial from Material library [UseSwitchCompatOrMaterialCode from androidx.appcompat]
+    private lateinit var temperatureSwitch: Switch
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\java\com\hackathon\alienweather\MainActivity.kt:14: Warning: Use SwitchCompat from AppCompat or SwitchMaterial from Material library [UseSwitchCompatOrMaterialCode from androidx.appcompat]
+    private lateinit var windSwitch: Switch
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UseSwitchCompatOrMaterialCode":
+   Use SwitchCompat from AppCompat or SwitchMaterial from Material library
+
+   Vendor: Android Open Source Project
+   Identifier: androidx.appcompat
+   Feedback: https://issuetracker.google.com/issues/new?component=460343
+
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\layout\activity_main.xml:35: Warning: Use SwitchCompat from AppCompat or SwitchMaterial from Material library [UseSwitchCompatOrMaterialXml from androidx.appcompat]
+        <Switch
+        ^
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\layout\activity_main.xml:51: Warning: Use SwitchCompat from AppCompat or SwitchMaterial from Material library [UseSwitchCompatOrMaterialXml from androidx.appcompat]
+        <Switch
+        ^
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\layout\activity_main.xml:67: Warning: Use SwitchCompat from AppCompat or SwitchMaterial from Material library [UseSwitchCompatOrMaterialXml from androidx.appcompat]
+        <Switch
+        ^
+
+   Explanation for issues of type "UseSwitchCompatOrMaterialXml":
+   Use SwitchCompat from AppCompat or SwitchMaterial from Material library
+
+   Vendor: Android Open Source Project
+   Identifier: androidx.appcompat
+   Feedback: https://issuetracker.google.com/issues/new?component=460343
+
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:8: Warning: A newer version of compileSdkVersion than 34 is available: 36 [GradleDependency]
+    compileSdk = 34
+    ~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:38: Warning: A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0 [GradleDependency]
+    implementation("androidx.core:core-ktx:1.12.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:39: Warning: A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1 [GradleDependency]
+    implementation("androidx.appcompat:appcompat:1.6.1")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:40: Warning: A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0 [GradleDependency]
+    implementation("com.google.android.material:material:1.11.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:41: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1 [GradleDependency]
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:48: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.7.0 is available: 2.9.2 [GradleDependency]
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:49: Warning: A newer version of androidx.lifecycle:lifecycle-service than 2.7.0 is available: 2.9.2 [GradleDependency]
+    implementation("androidx.lifecycle:lifecycle-service:2.7.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:52: Warning: A newer version of androidx.work:work-runtime-ktx than 2.9.0 is available: 2.10.3 [GradleDependency]
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:56: Warning: A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.3.0 [GradleDependency]
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:57: Warning: A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.7.0 [GradleDependency]
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\gradle\libs.versions.toml:4: Warning: A newer version of androidx.core:core-ktx than 1.10.1 is available: 1.16.0 [GradleDependency]
+coreKtx = "1.10.1"
+          ~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\gradle\libs.versions.toml:6: Warning: A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.3.0 [GradleDependency]
+junitVersion = "1.1.5"
+               ~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\gradle\libs.versions.toml:7: Warning: A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.7.0 [GradleDependency]
+espressoCore = "3.5.1"
+               ~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\gradle\libs.versions.toml:8: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.6.1 is available: 2.9.2 [GradleDependency]
+lifecycleRuntimeKtx = "2.6.1"
+                      ~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\gradle\libs.versions.toml:9: Warning: A newer version of androidx.activity:activity-compose than 1.8.0 is available: 1.10.1 [GradleDependency]
+activityCompose = "1.8.0"
+                  ~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\gradle\libs.versions.toml:10: Warning: A newer version of androidx.compose:compose-bom than 2024.09.00 is available: 2025.07.00 [GradleDependency]
+composeBom = "2024.09.00"
+             ~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:44: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.7.3 is available: 1.10.2 [NewerVersionAvailable]
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:45: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-core than 1.7.3 is available: 1.10.2 [NewerVersionAvailable]
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\gradle\libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.android than 2.0.21 is available: 2.2.0 [NewerVersionAvailable]
+kotlin = "2.0.21"
+         ~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\gradle\libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.plugin.compose than 2.0.21 is available: 2.2.0 [NewerVersionAvailable]
+kotlin = "2.0.21"
+         ~~~~~~~~
+
+   Explanation for issues of type "NewerVersionAvailable":
+   This detector checks with a central repository to see if there are newer
+   versions available for the dependencies used by this project. This is
+   similar to the GradleDependency check, which checks for newer versions
+   available in the Android SDK tools and libraries, but this works with any
+   MavenCentral dependency, and connects to the library every time, which
+   makes it more flexible but also much slower.
+
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\layout\activity_main.xml:8: Warning: Possible overdraw: Root element paints background #1a1a2e with a theme that also paints a background (inferred theme is @style/Theme.AlienWeatherAlert) [Overdraw]
+    android:background="#1a1a2e"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "Overdraw":
+   If you set a background drawable on a root view, then you should use a
+   custom theme where the theme background is null. Otherwise, the theme
+   background will be painted first, only to have your custom background
+   completely cover it; this is called "overdraw".
+
+   NOTE: This detector relies on figuring out which layouts are associated
+   with which activities based on scanning the Java code, and it's currently
+   doing that using an inexact pattern matching algorithm. Therefore, it can
+   incorrectly conclude which activity the layout is associated with and then
+   wrongly complain that a background-theme is hidden.
+
+   If you want your custom background on multiple pages, then you should
+   consider making a custom theme with your custom background and just using
+   that theme instead of a root element background.
+
+   Of course it's possible that your custom drawable is translucent and you
+   want it to be mixed with the background. However, you will get better
+   performance if you pre-mix the background with your drawable and use that
+   resulting image or color as a custom theme background instead.
+
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\xml\backup_rules.xml:8: Warning: The resource R.xml.backup_rules appears to be unused [UnusedResources]
+<full-backup-content>
+^
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\values\colors.xml:3: Warning: The resource R.color.purple_200 appears to be unused [UnusedResources]
+    <color name="purple_200">#FFBB86FC</color>
+           ~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\values\colors.xml:4: Warning: The resource R.color.purple_500 appears to be unused [UnusedResources]
+    <color name="purple_500">#FF6200EE</color>
+           ~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\values\colors.xml:5: Warning: The resource R.color.purple_700 appears to be unused [UnusedResources]
+    <color name="purple_700">#FF3700B3</color>
+           ~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\values\colors.xml:6: Warning: The resource R.color.teal_200 appears to be unused [UnusedResources]
+    <color name="teal_200">#FF03DAC5</color>
+           ~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\values\colors.xml:7: Warning: The resource R.color.teal_700 appears to be unused [UnusedResources]
+    <color name="teal_700">#FF018786</color>
+           ~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\values\colors.xml:8: Warning: The resource R.color.black appears to be unused [UnusedResources]
+    <color name="black">#FF000000</color>
+           ~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\values\colors.xml:9: Warning: The resource R.color.white appears to be unused [UnusedResources]
+    <color name="white">#FFFFFFFF</color>
+           ~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\xml\data_extraction_rules.xml:6: Warning: The resource R.xml.data_extraction_rules appears to be unused [UnusedResources]
+<data-extraction-rules>
+^
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\mipmap-hdpi\ic_launcher_round.webp: Warning: The resource R.mipmap.ic_launcher_round appears to be unused [UnusedResources]
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\values\strings.xml:3: Warning: The resource R.string.start_monitoring appears to be unused [UnusedResources]
+    <string name="start_monitoring">Start Monitoring</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\values\strings.xml:4: Warning: The resource R.string.stop_monitoring appears to be unused [UnusedResources]
+    <string name="stop_monitoring">Stop Monitoring</string>
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\values\strings.xml:5: Warning: The resource R.string.rain_alerts appears to be unused [UnusedResources]
+    <string name="rain_alerts">Rain Alerts</string>
+            ~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\values\strings.xml:6: Warning: The resource R.string.temperature_alerts appears to be unused [UnusedResources]
+    <string name="temperature_alerts">Temperature Alerts</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\values\strings.xml:7: Warning: The resource R.string.wind_alerts appears to be unused [UnusedResources]
+    <string name="wind_alerts">Wind Alerts</string>
+            ~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\values\strings.xml:8: Warning: The resource R.string.monitoring_started appears to be unused [UnusedResources]
+    <string name="monitoring_started">Weather monitoring started</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\values\strings.xml:9: Warning: The resource R.string.monitoring_stopped appears to be unused [UnusedResources]
+    <string name="monitoring_stopped">Weather monitoring stopped</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\values\strings.xml:10: Warning: The resource R.string.select_alert_types appears to be unused [UnusedResources]
+    <string name="select_alert_types">Select Alert Types:</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\values\strings.xml:11: Warning: The resource R.string.weather_service_running appears to be unused [UnusedResources]
+    <string name="weather_service_running">Monitoring planetary weather conditions...</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+   Available options:
+
+   **skip-libraries** (default is true):
+   Whether the unused resource check should skip reporting unused resources in libraries.
+
+   Many libraries will declare resources that are part of the library surface; other modules depending on the library will also reference the resources. To avoid reporting all these resources as unused (in the context of a library), the unused resource check normally skips reporting unused resources in libraries. Instead, run the unused resource check on the consuming app module (along with `checkDependencies=true`).
+
+   However, there are cases where you want to check that all the resources declared in a library are used; in that case, you can disable the skip option.
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UnusedResources">
+           <option name="skip-libraries" value="true" />
+       </issue>
+   </lint>
+   ```
+
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\values\strings.xml:11: Warning: Replace "..." with ellipsis character (…, &#8230;) ? [TypographyEllipsis]
+    <string name="weather_service_running">Monitoring planetary weather conditions...</string>
+                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "TypographyEllipsis":
+   You can replace the string "..." with a dedicated ellipsis character,
+   ellipsis character (u2026, &#8230;). This can help make the text more
+   readable.
+
+   https://en.wikipedia.org/wiki/Ellipsis
+
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\layout\activity_main.xml:83: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+        <Button
+         ~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\layout\activity_main.xml:93: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+        <Button
+         ~~~~~~
+
+   Explanation for issues of type "ButtonStyle":
+   Button bars typically use a borderless style for the buttons. Set the
+   style="?android:attr/buttonBarButtonStyle" attribute on each of the
+   buttons, and set style="?android:attr/buttonBarStyle" on the parent layout
+
+   https://d.android.com/r/studio-ui/designer/material/dialogs
+
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:38: Warning: Use version catalog instead (androidx.core:core-ktx is already available as androidx-core-ktx, but using version 1.10.1 instead) [UseTomlInstead]
+    implementation("androidx.core:core-ktx:1.12.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:39: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("androidx.appcompat:appcompat:1.6.1")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:40: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("com.google.android.material:material:1.11.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:41: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:44: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:45: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:48: Warning: Use version catalog instead (androidx.lifecycle:lifecycle-runtime-ktx is already available as androidx-lifecycle-runtime-ktx, but using version 2.6.1 instead) [UseTomlInstead]
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:49: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("androidx.lifecycle:lifecycle-service:2.7.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:52: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:55: Warning: Use the existing version catalog reference (libs.junit) instead [UseTomlInstead]
+    testImplementation("junit:junit:4.13.2")
+                       ~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:56: Warning: Use the existing version catalog reference (libs.androidx.junit) instead [UseTomlInstead]
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\build.gradle.kts:57: Warning: Use the existing version catalog reference (libs.androidx.espresso.core) instead [UseTomlInstead]
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UseTomlInstead":
+   If your project is using a libs.versions.toml file, you should place all
+   Gradle dependencies in the TOML file. This lint check looks for version
+   declarations outside of the TOML file and suggests moving them (and in the
+   IDE, provides a quickfix to performing the operation automatically).
+
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\java\com\hackathon\alienweather\MainActivity.kt:48: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        statusText.text = "Weather monitoring started"
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\java\com\hackathon\alienweather\MainActivity.kt:53: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        statusText.text = "Weather monitoring stopped"
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\layout\activity_main.xml:14: Warning: Hardcoded string "Alien Weather Alert System", should use @string resource [HardcodedText]
+        android:text="Alien Weather Alert System"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\layout\activity_main.xml:24: Warning: Hardcoded string "Select Alert Types:", should use @string resource [HardcodedText]
+        android:text="Select Alert Types:"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\layout\activity_main.xml:40: Warning: Hardcoded string "Rain Alerts", should use @string resource [HardcodedText]
+            android:text="Rain Alerts"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\layout\activity_main.xml:56: Warning: Hardcoded string "Temperature Alerts", should use @string resource [HardcodedText]
+            android:text="Temperature Alerts"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\layout\activity_main.xml:72: Warning: Hardcoded string "Wind Alerts", should use @string resource [HardcodedText]
+            android:text="Wind Alerts"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\layout\activity_main.xml:89: Warning: Hardcoded string "Start Monitoring", should use @string resource [HardcodedText]
+            android:text="Start Monitoring"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\layout\activity_main.xml:99: Warning: Hardcoded string "Stop Monitoring", should use @string resource [HardcodedText]
+            android:text="Stop Monitoring"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\res\layout\activity_main.xml:108: Warning: Hardcoded string "Weather monitoring stopped", should use @string resource [HardcodedText]
+        android:text="Weather monitoring stopped"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardcodedText":
+   Hardcoding text attributes directly in layout files is bad for several
+   reasons:
+
+   * When creating configuration variations (for example for landscape or
+   portrait) you have to repeat the actual text (and keep it up to date when
+   making changes)
+
+   * The application cannot be translated to other languages by just adding
+   new translations for existing string resources.
+
+   There are quickfixes to automatically extract this hardcoded string into a
+   resource lookup.
+
+C:\Users\VINEESH\AndroidStudioProjects\AlienWeatherAlert\app\src\main\AndroidManifest.xml: Warning: The project references RTL attributes, but does not explicitly enable or disable RTL support with android:supportsRtl in the manifest [RtlEnabled]
+
+   Explanation for issues of type "RtlEnabled":
+   To enable right-to-left support, when running on API 17 and higher, you
+   must set the android:supportsRtl attribute in the manifest <application>
+   element.
+
+   If you have started adding RTL attributes, but have not yet finished the
+   migration, you can set the attribute to false to satisfy this lint check.
+
+3 errors, 73 warnings
