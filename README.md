@@ -10,7 +10,7 @@
 
 ### Team Members
 - Team Lead:  T Vineesh - Sahrdaya College Of Engineering And Technology Kodakara,Thrissur,Kerala 
--Member 2: [Menon Sreeraj Raghunath] - [Sahrdaya College Of Engineering And Technology Kodakara,Thrissur,Kerala]
+-Member 2: Menon Sreeraj Raghunath - Sahrdaya College Of Engineering And Technology Kodakara,Thrissur,Kerala
 
 ### Project Description
 An Android app that sends alert messages and makes your phone vibrate for extreme weather conditions… on other planets like Mars, Jupiter, and beyond. Because who doesn’t want to know about a Martian dust storm while eating breakfast?
@@ -40,10 +40,6 @@ For Hardware:
 Main components: Any Android smartphone capable of vibration
 
 Specifications: Android 8.0 (Oreo) or higher recommended
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
 
 ### Implementation
 For Software:
@@ -80,41 +76,11 @@ Connect your Android device or start an emulator.
 <img width="343" height="770" alt="2" src="https://github.com/user-attachments/assets/16295dcd-060e-4e33-a350-9dc3524db115" />
 
 
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
-
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
-
-### Project Demo
-# Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- T Vineesh: App Interface
+- Menon Sreeraj raghunath: App Backend
+
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
