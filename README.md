@@ -75,6 +75,8 @@ Connect your Android device or start an emulator.
 # Screenshots (Add at least 3)
 <img width="401" height="795" alt="1" src="https://github.com/user-attachments/assets/53d59897-27f6-4055-9649-2ba0f65af056" />
 <img width="343" height="770" alt="2" src="https://github.com/user-attachments/assets/16295dcd-060e-4e33-a350-9dc3524db115" />
+<img width="317" height="705" alt="image" src="https://github.com/user-attachments/assets/d4f44820-b758-42d0-92c9-ec481e86ecce" />
+
 
 
 
